@@ -1,9 +1,17 @@
 
   .card {
     margin: 100px auto 0;
-    width: 400px;
-    height: 600px;
+    width: 200px;
+    height: 300px;
     perspective: 1000px;
+    visibility: visible;
+  }
+
+  .cardInvisible{
+    margin: 100px auto 0;
+    width: 200px;
+    height: 300px;
+    visibility: hidden;
   }
   
   .cardinner {
@@ -27,7 +35,7 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 8px;
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
   }
   
@@ -40,7 +48,7 @@
   
   .cardfacefront h2 {
     color: #FFF;
-    font-size: 32px;
+    font-size: 24px;
   }
   
   .cardfaceback {
@@ -54,7 +62,7 @@
   }
 
   .cardfacetext h2 {
-    font-size: 28px;
+    font-size: 20px;
   }
   
   .cardcontent {
@@ -64,7 +72,7 @@
   
   .cardheader {
     position: relative;
-    padding: 30px 30px 40px;
+    padding: 15px 15px 20px;
   }
   
   .cardheader:after {
@@ -82,9 +90,9 @@
   
   .gandalf {
     display: block;
-    width: 128px;
-    height: 128px;
-    margin: 0 auto 30px;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 15px;
     border-radius: 50%;
     background-color: #FFF;
     border: 5px solid #FFF;
@@ -94,31 +102,31 @@
   .ring {
     display: block;
     width: 100%;
-    height: 100%px;
+    height: 100%;
   }
   
   .cardheader h2 {
     color: #FFF;
-    font-size: 32px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 800;
     text-transform: uppercase;
     text-align: center;
   }
   
   .cardbody {
-    padding: 30px;
+    padding: 15px;
     text-align: justify;
   }
   
   .cardbody h3 {
     color: var(--dark);
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
   }
   
   .cardbody p {
     color: var(--dark);
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 10px;
+    line-height: 1.2;
   }

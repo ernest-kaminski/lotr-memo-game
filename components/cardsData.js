@@ -11,7 +11,8 @@ import Legolas from '../images/legolas.jpg'
         title: "Powerfull Wizard",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id erat a magna lobortis dictum. Nunc est arcu, lacinia quis sapien placerat, laoreet tincidunt nulla.",
         image: Gandalf,
-        isFlipped: false
+        isFlipped: false,
+        isVisible: true
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ import Legolas from '../images/legolas.jpg'
         title: "King of Gondor",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id erat a magna lobortis dictum. Nunc est arcu, lacinia quis sapien placerat, laoreet tincidunt nulla.",
         image: Aragorn,
-        isFlipped: false
+        isFlipped: false,
+        isVisible: true
     },
     {
         id: 3,
@@ -29,7 +31,8 @@ import Legolas from '../images/legolas.jpg'
         title: "Prince of Wooden Elves",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id erat a magna lobortis dictum. Nunc est arcu, lacinia quis sapien placerat, laoreet tincidunt nulla.",
         image: Legolas,
-        isFlipped: false
+        isFlipped: false,
+        isVisible: true
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ import Legolas from '../images/legolas.jpg'
         title: "King of Gondor",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id erat a magna lobortis dictum. Nunc est arcu, lacinia quis sapien placerat, laoreet tincidunt nulla.",
         image: Aragorn,
-        isFlipped: false
+        isFlipped: false,
+        isVisible: true
     },
     {
         id: 5,
@@ -47,7 +51,8 @@ import Legolas from '../images/legolas.jpg'
         title: "Prince of Wooden Elves",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id erat a magna lobortis dictum. Nunc est arcu, lacinia quis sapien placerat, laoreet tincidunt nulla.",
         image: Legolas,
-        isFlipped: false
+        isFlipped: false,
+        isVisible: true
     },
     {
         id: 6,
@@ -56,7 +61,8 @@ import Legolas from '../images/legolas.jpg'
         title: "Powerfull Wizard",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id erat a magna lobortis dictum. Nunc est arcu, lacinia quis sapien placerat, laoreet tincidunt nulla.",
         image: Gandalf,
-        isFlipped: false
+        isFlipped: false,
+        isVisible: true
     },
 
  ]

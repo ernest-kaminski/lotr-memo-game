@@ -25,9 +25,8 @@ function Card(){
             setTimeout(() => {
                 compareCards()
             }, 2000)       
-            setNumberOfFlippedCards(0);
         }
-    }, [cardsData])
+    }, [numberOfFlippedCards])
 
     const compareCards = () => {
         if(firstFlippedCardId !== secondFlippedCardId){
@@ -38,44 +37,49 @@ function Card(){
                 return card
             })
             setCardsData(newState)
+            
         }else{
-            const newState = cardsData.filter(card => card.cardId != firstFlippedCardId)
+            //const newState = cardsData.filter(card => card.cardId != firstFlippedCardId)
+            const newState = cardsData.map(card => {
+                if((card.cardId == firstFlippedCardId && card.isFlipped) || (card.cardId == secondFlippedCardId && card.isFlipped) ){
+                        return {...card, isVisible: false}
+                }
+                return card
+            })
             setCardsData(newState)
         }
-
-        setFirstFlippedCardId(0)
-        setSecondFlippedCardId(0)
+        setNumberOfFlippedCards(0);
     }
 
     const onClicked = (cardId, id) => {
-        const newState = cardsData.map(card => {
-            if(card.cardId == cardId && card.id == id && !card.isFlipped){
-                    return {...card, isFlipped: true}
-            }
-            return card
-        })
-        setCardsData(newState)
-
-        if(numberOfFlippedCards <= 1 ){
+        if(numberOfFlippedCards <= 1 && cardsData[id-1].isFlipped == false){
+            const newState = cardsData.map(card => {
+                if(card.cardId == cardId && card.id == id && !card.isFlipped){
+                        return {...card, isFlipped: true}
+                }
+                return card
+            })
 
             if(numberOfFlippedCards == 0){
                 setFirstFlippedCardId(cardId)
             }else if(numberOfFlippedCards == 1){
                 setSecondFlippedCardId(cardId)
             }
+
             incrementNumberOfFlippedCards()
+            setCardsData(newState)
         }
     }
 
     const cards = cardsData.map((card, index) => {
         return(
-        <div className={styles.card} key={card.id}>
+        <div className={card.isVisible ? styles.card : styles.cardInvisible} key={card.id}>
             <div className={ card.isFlipped ? `${styles.cardinner}  ${styles.isflipped}` : styles.cardinner } onClick={() => onClicked(card.cardId, card.id)} id={card.id}>
                 <div className={`${styles.cardface} ${styles.cardfacefront}`}>
                 <Image src={Ring} alt="" className={styles.ring}/>
-                <div className={styles.cardfacetext}>
+                {/* <div className={styles.cardfacetext}>
                     <h2>Check Your Card</h2>
-                </div>
+                </div> */}
                 </div>
                 <div className={`${styles.cardface} ${styles.cardfaceback}`}>
                 <div className={styles.cardcontent}>
