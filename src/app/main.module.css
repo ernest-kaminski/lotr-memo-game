@@ -1,0 +1,87 @@
+@font-face {
+    font-family: lotr;
+    src: url(lotr-font.ttf);
+}
+
+.main{
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+  }
+
+.container{
+    width: 100vw;
+    height: 100vh;
+  }
+
+.textContainer{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mainText{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    color: gold;
+    font-family: lotr;
+    font-size: 44px;
+    text-shadow: 3px 3px 3px #002823, -1px 0 3px #002823;
+}
+
+.the1{
+    font-size: 20px;
+    position: relative;
+    left: 80px;
+    top: 5px;
+}
+
+.l{
+    font-size: 100px;
+}
+
+.o{
+    font-size: 48px;
+    position: relative;
+    top: 30px;
+    left: -15px;
+}
+
+.ord{
+    position: relative;
+    top: 30px;
+    left: -15px;
+}
+
+.ofthe {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    line-height: 0.95em;
+    font-size: 16px;
+    position: relative;
+    left: -14px;
+    top: 36px
+  }
+
+.subMainText{
+    width: 80%;
+    margin: auto;
+}
+
+.subMainText h2{
+    font-size: 16px;
+    color: antiquewhite;
+}
+
+.startButton{
+    height: 10vh;
+
+}
+

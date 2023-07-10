@@ -98,9 +98,9 @@ function Card(){
     })
 
     return(
-        <body>
+        <>
             {cards}
-        </body>
+        </>
     )
 }
 

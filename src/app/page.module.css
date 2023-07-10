@@ -1,7 +1,18 @@
 
+  .cardContainer{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
   .card {
     margin: 100px auto 0;
-    width: 200px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 280px;
     height: 300px;
     perspective: 1000px;
     visibility: visible;
@@ -9,7 +20,7 @@
 
   .cardInvisible{
     margin: 100px auto 0;
-    width: 200px;
+    width: 280px;
     height: 300px;
     visibility: hidden;
   }
@@ -97,6 +108,15 @@
     background-color: #FFF;
     border: 5px solid #FFF;
     object-fit: cover;
+  }
+
+  .main{
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
   }
 
   .ring {
