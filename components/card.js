@@ -16,9 +16,38 @@ function Card(){
         setNumberOfFlippedCards((prevValue) => prevValue + 1)   
     }
 
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+
+
     useEffect(() => {
-        setCardsData(Data)
+       let randomizedData = shuffle(Data)
+          
+        let randomizedDataAfterIndex = randomizedData.map((card, index) => {
+            return {...card, id: index}
+        })
+
+        console.log(randomizedDataAfterIndex)
+
+        setCardsData(randomizedDataAfterIndex)
     }, [])
+
+    
 
     useEffect(() => {
         if(numberOfFlippedCards == 2){    
@@ -52,7 +81,8 @@ function Card(){
     }
 
     const onClicked = (cardId, id) => {
-        if(numberOfFlippedCards <= 1 && cardsData[id-1].isFlipped == false){
+        console.log(id)
+        if(numberOfFlippedCards <= 1 && cardsData[id].isFlipped == false){
             const newState = cardsData.map(card => {
                 if(card.cardId == cardId && card.id == id && !card.isFlipped){
                         return {...card, isFlipped: true}
@@ -72,9 +102,10 @@ function Card(){
     }
 
     const cards = cardsData.map((card, index) => {
+        card.id = index
         return(
         <div className={card.isVisible ? styles.card : styles.cardInvisible} key={card.id}>
-            <div className={ card.isFlipped ? `${styles.cardinner}  ${styles.isflipped}` : styles.cardinner } onClick={() => onClicked(card.cardId, card.id)} id={card.id}>
+            <div className={ card.isFlipped ? `${styles.cardinner}  ${styles.isflipped}` : styles.cardinner } onClick={() => onClicked(card.cardId, index)} id={index}>
                 <div className={`${styles.cardface} ${styles.cardfacefront}`}>
                 <Image src={Ring} alt="" className={styles.ring}/>
                 {/* <div className={styles.cardfacetext}>

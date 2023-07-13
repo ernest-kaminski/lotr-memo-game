@@ -3,6 +3,7 @@ import './page.module.css'
 import Main from './main.jpg'
 import Image from 'next/image'
 import mainStyles from './main.module.css'
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -15,18 +16,19 @@ export default function Home() {
           <div className={mainStyles.o}>O</div> 
           <div className={mainStyles.ord}>RD</div> 
           <div className={mainStyles.ofthe}>OF THE</div> 
-          OF THE 
-          R
-          ING
-          S
+          <div className={mainStyles.r}>R</div> 
+          <div className={mainStyles.ing}>ing</div> 
+          <div className={mainStyles.s}>S</div> 
         </div>
         <div className={mainStyles.subMainText}>
           <h2>memory card game</h2>
         </div>
       </div>
-      <button className={mainStyles.startButton}>
-        Start Youy Journey
-      </button>
+      <Link href="/game">
+        <button className={mainStyles.startButton}>
+          Start Your Journey
+        </button>
+      </Link>
     </div>
   )
 }

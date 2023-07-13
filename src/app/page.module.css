@@ -9,7 +9,7 @@
   }
 
   .card {
-    margin: 100px auto 0;
+    margin: 10px auto 0;
     padding-left: 40px;
     padding-right: 40px;
     width: 280px;
@@ -19,7 +19,7 @@
   }
 
   .cardInvisible{
-    margin: 100px auto 0;
+    margin: 10px auto 0;
     width: 280px;
     height: 300px;
     visibility: hidden;
