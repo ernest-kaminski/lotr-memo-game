@@ -11,6 +11,9 @@ function Card(){
     const [firstFlippedCardId, setFirstFlippedCardId] = useState(0);
     const [secondFlippedCardId, setSecondFlippedCardId] = useState(0);
     const [cardsData, setCardsData] = useState(Data)
+    const [checkedCardsNumber, setCheckedCardNumber] = useState(0);
+    const [movesNumber, setMovesNumber] = useState(0);
+    const [isGameEnded, setGameEnded] = useState(false)
 
     function incrementNumberOfFlippedCards(){
         setNumberOfFlippedCards((prevValue) => prevValue + 1)   
@@ -34,6 +37,16 @@ function Card(){
         return array;
       }
 
+      function endGame(){
+        setGameEnded(true);
+      }
+
+
+    useEffect(() => {
+        if(checkedCardsNumber == 9){
+            endGame()
+        }
+    }, [checkedCardsNumber])
 
     useEffect(() => {
        let randomizedData = shuffle(Data)
@@ -42,12 +55,8 @@ function Card(){
             return {...card, id: index}
         })
 
-        console.log(randomizedDataAfterIndex)
-
         setCardsData(randomizedDataAfterIndex)
     }, [])
-
-    
 
     useEffect(() => {
         if(numberOfFlippedCards == 2){    
@@ -65,8 +74,8 @@ function Card(){
                 }
                 return card
             })
-            setCardsData(newState)
             
+            setCardsData(newState)
         }else{
             //const newState = cardsData.filter(card => card.cardId != firstFlippedCardId)
             const newState = cardsData.map(card => {
@@ -75,8 +84,10 @@ function Card(){
                 }
                 return card
             })
+            setCheckedCardNumber((prevValue) => prevValue + 1)
             setCardsData(newState)
         }
+        setMovesNumber((prevValue) => prevValue + 1)
         setNumberOfFlippedCards(0);
     }
 
@@ -131,6 +142,10 @@ function Card(){
     return(
         <>
             {cards}
+            <div className={isGameEnded ? styles.gameEndedVisible : styles.gameEndedInvisible}>
+                <h2>Congratulatnions! You won!</h2>
+                <h3>Number of moves: {movesNumber}</h3>
+            </div>
         </>
     )
 }

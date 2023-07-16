@@ -1,4 +1,9 @@
 
+@font-face {
+  font-family: lotr;
+  src: url(lotr-font.ttf);
+}
+  
   .cardContainer{
     width: 100vw;
     min-height: 100vh;
@@ -149,4 +154,29 @@
     color: var(--dark);
     font-size: 10px;
     line-height: 1.2;
+  }
+
+  .gameEndedVisible h2{
+    color: gold;
+    font-family: lotr;
+    font-size: 64px;
+  }
+
+  .gameEndedVisible  h3{
+    text-align: center;
+  }
+
+  .gameEndedVisible {
+    visibility: visible;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: gold;
+    font-family: lotr;
+    font-size: 48px;
+  }
+
+  .gameEndedInvisible {
+    visibility: hidden;
   }
